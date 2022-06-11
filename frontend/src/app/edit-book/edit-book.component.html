@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 style="text-align: center; margin-top: 3px;">Обновить {{book.title}}, id:{{book.id}}</h1>
+        <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3 mt-3">
+            <label for="title" class="form-label">Название:</label>
+            <input type="text" class="form-control" id="title" placeholder="Введите название книги" value="{{book.title}}" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Автор:</label>
+            <input type="text" class="form-control" id="author" placeholder="Введите имя автора" value="{{book.author}}" formControlName="author">
+        </div>
+        <div class="mb-3">
+            <label for="isbn" class="form-label">ISBN:</label>
+            <input type="text" class="form-control" id="isbn" placeholder="Введите ISBN книги (Например: 978-2-266-11156-0)" value="{{book.isbn}}" formControlName="isbn">
+        </div>
+        <div class="mb-3">
+            <label for="pic" class="form-label">Обложка книги:</label>
+            <input class="form-control" type="file" id="pic" formControlName="pic" (change)="uploadFile($event)">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Описание:</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description">{{book.description}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Изменить</button>
+        <button type="button" class="btn btn-danger m-3" (click)="deleteBook()">Удалить</button>
+    </form>
+</div>
