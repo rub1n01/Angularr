@@ -1,0 +1,31 @@
+<!-- navbar -->
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <!-- navbar -->
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a routerLink="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <span class="fs-5 me-3">Booklist</span>
+            </a>
+        
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a routerLink="/books" class="nav-link px-2 text-white">Список</a></li>
+                <li><a routerLink="/create_book" class="nav-link px-2 text-white">Создать</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- navbar end -->
+
+<div class="main__content">
+    <div *ngIf="router.url == '/'">
+        <div class="main__content__description">
+            <div class="container" style="text-align: center;">
+                <h1 class="m-3">Booklist.</h1>
+                <p class="lead">Архив книг.</p>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+
